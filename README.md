@@ -4,59 +4,95 @@
 
 # Noctale
 
-Noctale adalah platform membaca dan menulis novel digital yang dibangun menggunakan framework Laravel. Platform ini memfasilitasi interaksi antara pembaca dan penulis dalam satu wadah yang mudah digunakan, dilengkapi dengan berbagai fitur interaktif dan sistem manajemen konten yang komprehensif.
+Noctale adalah platform membaca dan menulis novel digital yang dibangun menggunakan framework Laravel. Platform ini dirancang untuk memfasilitasi interaksi antara pembaca dan penulis dalam satu ekosistem digital yang modern, interaktif, dan mudah digunakan.
+
+---
 
 ## Fitur Utama
 
 ### 1. Pengguna Publik (Tamu)
 
-- **Eksplorasi Novel:** Menjelajahi berbagai macam novel berdasarkan genre dan popularitas.
-- **Membaca Novel:** Akses dan baca bab-bab novel yang tersedia.
-- **Profil Pengguna:** Lihat profil para penulis dan karya-karyanya.
+- **Eksplorasi Novel:** Menjelajahi berbagai novel berdasarkan genre dan popularitas.
+- **Membaca Novel:** Mengakses dan membaca bab-bab novel yang tersedia.
+- **Profil Pengguna:** Melihat profil penulis beserta karya-karyanya.
 
 ### 2. Pembaca Terautentikasi (Pembaca)
 
-- **Dashboard Personal:** Ringkasan aktivitas seperti riwayat bacaan, jumlah bookmark, dan rekomendasi.
-- **Sistem Interaksi:** Berikan komentar pada bab, sukai komentar pengguna lain, dan tulis ulasan (rating & review) untuk novel.
-- **Bookmark & Riwayat:** Simpan novel favorit ke daftar bookmark untuk dibaca nanti dan pantau riwayat bacaan.
-- **Kotak Masuk (Inbox):** Terima notifikasi terkait aktivitas interaksi dan pembaruan karya.
-- **Pelaporan (Report):** Fitur untuk melaporkan novel atau komentar yang tidak pantas.
-- **Manajemen Profil:** Edit dan perbarui profil pengguna secara mandiri.
+- **Dashboard Personal:** Menampilkan ringkasan aktivitas seperti riwayat bacaan, bookmark, dan rekomendasi novel.
+- **Sistem Interaksi:** Memberikan komentar, menyukai komentar pengguna lain, serta memberikan rating dan review pada novel.
+- **Bookmark & Riwayat:** Menyimpan novel favorit dan memantau progres bacaan.
+- **Kotak Masuk (Inbox):** Menerima notifikasi aktivitas dan pembaruan karya.
+- **Pelaporan (Report):** Melaporkan novel atau komentar yang tidak sesuai.
+- **Manajemen Profil:** Mengedit dan memperbarui profil pengguna secara mandiri.
 
 ### 3. Penulis
 
 Semua fitur Pembaca, ditambah:
-- **Manajemen Novel:** Membuat, memperbarui, dan mengelola karya novel sendiri.
-- **Manajemen Bab (Bab):** Tambahkan bab-bab baru, kelola urutan, dan unggah gambar ilustrasi untuk bab.
-- **Statistik Karya:** Pantau jumlah penayangan (views), jumlah interaksi, dan performa dari masing-masing novel.
+
+- **Manajemen Novel:** Membuat, mengedit, dan mengelola novel sendiri.
+- **Manajemen Bab:** Menambahkan bab baru, mengatur urutan bab, serta mengunggah ilustrasi.
+- **Statistik Karya:** Melihat performa novel berdasarkan views dan interaksi pembaca.
 
 ### 4. Administrator
 
-- **Dashboard Admin:** Pemantauan dan ringkasan seluruh aktivitas di dalam platform.
-- **Manajemen Pengguna:** Kelola akun pembaca, penulis, dan admin lainnya.
-- **Manajemen Konten Utama:** Kelola daftar Genre dan awasi seluruh novel yang dipublikasikan.
-- **Moderasi Platform:** Kelola dan tindak lanjuti laporan pengguna, serta hapus komentar/ulasan yang melanggar aturan.
-- **Manajemen Banner:** Mengatur spanduk promosi yang tampil di halaman utama platform.
+- **Dashboard Admin:** Memantau aktivitas keseluruhan platform.
+- **Manajemen Pengguna:** Mengelola akun pembaca, penulis, dan admin.
+- **Manajemen Konten:** Mengelola genre, novel, dan konten utama platform.
+- **Moderasi Platform:** Menindaklanjuti laporan pengguna dan menghapus konten yang melanggar aturan.
+- **Manajemen Banner:** Mengatur banner promosi pada halaman utama.
 
-## Teknologi yang digunakan
+---
+
+## Teknologi yang Digunakan
 
 - **Backend:** Laravel 12 (PHP 8.2)
 - **Frontend:** Tailwind CSS, Alpine.js, Vite
-- **Basis data:** MySQL
-- **Autentikasi & Keamanan:** Laravel Breeze
+- **Database:** MySQL
+- **Authentication:** Laravel Breeze
+- **Version Control:** Git & GitHub
 
-## Cara Instalasi & Jangkauan Proyek Secara Lokal
+---
 
-### 1. Kloning repository ini
+## Dokumentasi & Panduan Tim
+
+Bagi anggota tim **Backend** maupun **Frontend**, silakan gunakan dokumen berikut sebagai acuan selama pengembangan proyek.
+
+### Dokumentasi Internal
+
+- **Daftar Task & GitHub Issues**  
+  Gunakan GitHub Issues untuk melihat pembagian tugas, checklist fitur, dan progress pengerjaan tim.
+
+- **Panduan Branching & Git Flow**  
+  Gunakan aturan penamaan branch dan alur pengembangan sesuai kesepakatan tim.
+
+- **Panduan Troubleshooting Gambar / Upload Error**  
+  Jika gambar hasil upload tidak muncul atau terjadi kendala storage:
+  
+   [Lihat Troubleshooting Guide](./webnovel/docs/troubleshooting.md)
+
+---
+
+###  Referensi Desain UI (Figma)
+
+Mockup antarmuka digunakan sebagai acuan implementasi frontend.
+
+-  [Lihat Desain Halaman Beranda (Home)](LINK_FIGMA_HOME)
+-  [Lihat Desain Halaman Login](LINK_FIGMA_LOGIN)
+
+---
+
+## Instalasi & Menjalankan Proyek Secara Lokal
+
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/niluh01/team-prompter-novel-noctale
 cd noctale
 ```
 
-### 2. Instal dependensi PHP & Node.js
+### 2. Install Dependencies
 
-Pastikan sudah menginstal Composer dan Node.js.
+Pastikan **Composer** dan **Node.js** sudah terpasang.
 
 ```bash
 composer install
@@ -71,45 +107,70 @@ Salin file `.env.example` menjadi `.env`
 cp .env.example .env
 ```
 
-Lalu buka file `.env` dan sesuaikan konfigurasi database:
+Kemudian sesuaikan konfigurasi database:
 
-`DB_CONNECTION`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
+```env
+DB_CONNECTION=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+```
 
 ---
 
-### 4. Hasilkan Kunci Aplikasi
+### 4. Generate Application Key
 
 ```bash
 php artisan key:generate
 ```
 
-### 5. Jalankan Migrasi Database
+---
+
+### 5. Konfigurasi Storage Publik (Wajib)
+
+Agar file gambar hasil upload dapat diakses:
+
+```bash
+php artisan storage:link
+```
+
+Jika terjadi error:
+
+ [Lihat Troubleshooting Guide](./webnovel/docs/troubleshooting.md)
+
+---
+
+### 6. Jalankan Migrasi Database
 
 ```bash
 php artisan migrate
 ```
 
-Jika memiliki seeder:
+Jika menggunakan data dummy/seeder:
 
 ```bash
 php artisan migrate --seed
 ```
 
-### 6. Jalankan Development Server
+---
 
-Untuk frontend:
+### 7. Jalankan Development Server
+
+Frontend:
 
 ```bash
 npm run dev
 ```
 
-Buka terminal baru untuk backend:
+Backend (terminal baru):
 
 ```bash
 php artisan serve
 ```
 
-### 7. Akses Aplikasi
+---
+
+### 8. Akses Aplikasi
 
 Buka browser:
 
@@ -117,9 +178,32 @@ Buka browser:
 http://localhost:8000
 ```
 
-## Team
+---
 
-Proyek **Web Novel Noctale** dikembangkan oleh **Kelompok 13 Team Prompter** sebagai bagian dari pengembangan aplikasi web novel digital berbasis Laravel. Tim ini berkolaborasi dalam merancang, membangun, dan mengembangkan platform yang interaktif, modern, serta mudah digunakan bagi pembaca maupun penulis.
+## Struktur Direktori
+
+```bash
+team-prompter-novel-noctale/
+├── README.md
+├── webnovel/
+│   ├── app/
+│   ├── database/
+│   ├── public/
+│   ├── resources/
+│   ├── routes/
+│   ├── storage/
+│   ├── tests/
+│   └── docs/
+│       └── troubleshooting.md
+```
+
+---
+
+## Tim Pengembang
+
+Proyek **Web Novel Noctale** dikembangkan oleh **Kelompok 13 Team Prompter** sebagai bagian dari pengembangan aplikasi web novel digital berbasis Laravel.
+
+Tim berkolaborasi dalam merancang, membangun, dan mengembangkan platform yang modern, interaktif, dan mudah digunakan bagi pembaca maupun penulis.
 
 ### Anggota Tim
 
@@ -129,8 +213,16 @@ Proyek **Web Novel Noctale** dikembangkan oleh **Kelompok 13 Team Prompter** seb
 | Amelia Putri Syahroza | 2313020022 | Backend Developer |
 | Niluh Anggraini | 2313020043 | Project Manager |
 
-Tim berfokus pada pengembangan sistem yang tidak hanya memiliki tampilan modern dan responsif, tetapi juga didukung dengan pengelolaan data serta fitur interaktif yang optimal untuk memberikan pengalaman pengguna yang nyaman dan efisien.
+---
+
+## Catatan
+
+- Pastikan branch development mengikuti aturan Git Flow tim.
+- Simpan dokumentasi troubleshooting terbaru jika menemukan error baru.
+- Gunakan GitHub Issues untuk koordinasi task development.
 
 ---
 
-*Proyek ini dirancang untuk memberikan pengalaman membaca dan menulis karya fiksi dengan ekosistem yang terkelola dengan baik.*
+<p align="center">
+  <b>Proyek ini dirancang untuk memberikan pengalaman membaca dan menulis karya fiksi dengan ekosistem yang terkelola dengan baik.</b>
+</p>
