@@ -75,30 +75,30 @@ Tugas tim FE adalah memanggil gambar yang sudah tersimpan menggunakan fungsi hel
 
 *Cara yang SALAH (Gambar akan broken):*
 html
-<img src="{{ $novel->cover }}" alt="Cover">
+```<img src="{{ $novel->cover }}" alt="Cover">```
 <!-- Output salah: covers/contoh.jpg -->
 
-<img src="/storage/app/public/{{ $novel->cover }}" alt="Cover">
+```<img src="/storage/app/public/{{ $novel->cover }}" alt="Cover">```
 <!-- Output salah: URL tidak bisa diakses publik -->
 
 
 *Cara yang BENAR:*
 html
 <!-- Menggunakan asset() helper -->
-<img src="{{ asset('storage/' . $novel->cover) }}" alt="Cover Novel" class="w-full h-auto rounded-lg">
+```<img src="{{ asset('storage/' . $novel->cover) }}" alt="Cover Novel" class="w-full h-auto rounded-lg">```
 
 <!-- Atau menggunakan fungsi Storage::url() -->
-<img src="{{ \Illuminate\Support\Facades\Storage::url($novel->cover) }}" alt="Cover Novel" class="w-full h-auto rounded-lg">
+<!-- <img src="{{ \Illuminate\Support\Facades\Storage::url($novel->cover) }}" alt="Cover Novel" class="w-full h-auto rounded-lg"> -->
 
 
 ### Tips Tambahan untuk FE (Gambar Default):
 Jika ada kemungkinan novel tidak memiliki cover (data cover bernilai null di database), buatlah pengecekan agar layout web tidak rusak:
 
-html
+```html
 @if($novel->cover)
     <img src="{{ asset('storage/' . $novel->cover) }}" alt="Cover" class="w-full rounded-lg">
 @else
     <img src="{{ asset('images/default-cover.jpg') }}" alt="Default Cover" class="w-full rounded-lg">
-@endif
+@endif```
 
 (Pastikan file default-cover.jpg sudah disiapkan secara manual di folder public/images/)
