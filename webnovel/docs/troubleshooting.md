@@ -1,4 +1,4 @@
-# 🛠️ Panduan Mengatasi Gambar Upload Tidak Muncul (Error 404 / Broken Image)
+# Panduan Mengatasi Gambar Upload Tidak Muncul (Error 404 / Broken Image)
 
 Di Laravel, masalah gambar hasil upload (seperti cover novel atau banner) yang tidak muncul dan menghasilkan status *Error 404* atau broken image sering terjadi. Hal ini umumnya disebabkan karena file gambar tersimpan di tempat yang tertutup (storage/app/public), sementara web hanya bisa mengakses folder yang terbuka ke publik (public/).
 
